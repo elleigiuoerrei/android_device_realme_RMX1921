@@ -18,16 +18,21 @@
         android:title="@string/audio_title">
 
         <PreferenceScreen
-                android:key="dirac"
-                android:fragment="org.device.RealmeParts.dirac.DiracActivity"
-                android:summary="@string/dirac_summary"
-                android:title="@string/dirac_title" />
-
-        <PreferenceScreen
                 android:key="sound"
                 android:fragment="org.device.RealmeParts.audio.SoundControlSettingsActivity"
                 android:summary="@string/gain_summary"
                 android:title="@string/audio_gain_settings" />
+
+        <Preference
+            android:key="audio_fx"
+            android:title="@string/fx_title"
+            android:summary="@string/fx_summary"
+            >
+            <intent
+                 android:targetPackage="org.lineageos.audiofx"
+                 android:targetClass="org.lineageos.audiofx.activity.ActivityMusic" />
+        </Preference>
+
     </PreferenceCategory>
 
     <PreferenceCategory
